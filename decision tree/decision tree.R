@@ -35,5 +35,13 @@ library ( tree )
 fit <- tree ( Status ~., data = banknote [train ,], split ="deviance")
 plot (fit);text ( fit )
 summary (fit)
+#测试集的性能
 pred <- predict (fit ,newdata = banknote [-train ,])
 tail (pred ,5)
+pred.class <- colnames ( pred )[ max.col (pred ,ties.method = c("random"))]
+tail ( pred.class ,5)
+table ( banknote$Status [- train ], pred.class , dnn =c( "Observed Class","Predicted Class" ))#准确率98%
+#6、多次试验，选择模型
+#7、决策树的局限性在于不稳定性，另外容易过拟合
+#library(oblique.tree)
+#library(evtree)
