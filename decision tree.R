@@ -1,2 +1,3 @@
-data (" banknote ",package =" mclust ")
+install.packages("mclust")
+data ("banknote",package ="mclust")
 head ( banknote )
