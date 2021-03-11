@@ -1,3 +1,4 @@
+#鉴别真假钞票
 #1、收集和探索数据
 install.packages("mclust")
 data ("banknote",package ="mclust")
